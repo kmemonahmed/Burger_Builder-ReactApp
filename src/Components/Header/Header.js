@@ -1,12 +1,12 @@
 import React from 'react';
 import './Header.css';
 import Logo from "../../assets/logo.png";
+import { NavLink } from 'react-router-dom';
 import {
     Navbar,
     NavbarBrand,
     Nav,
-    NavItem,
-    NavLink
+    NavItem
 } from 'reactstrap';
 
 const Header = () => {
@@ -20,9 +20,15 @@ const Header = () => {
                     <img src={Logo} alt="Logo" width="80px" />
                 </NavbarBrand>
                 <Nav className="mr-md-5">
+
                     <NavItem>
-                        <NavLink href='#' className="NavLink">Something</NavLink>
+                        <NavLink exact to="/" className="NavLink">Burger Builder</NavLink>
                     </NavItem>
+                    
+                    <NavItem>
+                        <NavLink exact to="/orders" className="NavLink">Orders</NavLink>
+                    </NavItem>
+
                 </Nav>
             </Navbar>
         </div>

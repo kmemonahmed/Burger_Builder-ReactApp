@@ -53,6 +53,11 @@ export default class BurgerBuilder extends Component {
         })
     }
 
+    handleCheout = () => {
+        this.props.history.push("/checkout")
+    }
+
+
     updatePurchaseable = totalPrice => {
         if (totalPrice <= 50){
             this.setState({purchasable: false})
@@ -82,7 +87,7 @@ export default class BurgerBuilder extends Component {
                         <Summary ingredients={this.state.ingredients} />
                     </ModalBody>
                     <ModalFooter>
-                        <Button color="success">Continute to Checkout</Button>
+                        <Button color="success" onClick={this.handleCheout}>Continute to Checkout</Button>
                         <Button color="secondary" onClick={this.toggleModal}>Cancel</Button>
                     </ModalFooter>
                 </Modal>
